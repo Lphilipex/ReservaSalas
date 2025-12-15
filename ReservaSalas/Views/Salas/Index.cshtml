@@ -1,0 +1,36 @@
+﻿@model IEnumerable<ReservaSalas.Models.Sala>
+
+@{
+    ViewData["Title"] = "Salas";
+}
+<p>
+
+<h2>Salas</h2>
+</p>
+
+<a class="btn btn-primary mb-2" asp-action="Create">Nova Sala</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Capacidade</th>
+            <th>Localização</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var sala in Model)
+        {
+            <tr>
+                <td>@sala.Nome</td>
+                <td>@sala.Capacidade</td>
+                <td>@sala.Localizacao</td>
+                <td>
+                    <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@sala.Id">Editar</a>
+                    <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@sala.Id">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

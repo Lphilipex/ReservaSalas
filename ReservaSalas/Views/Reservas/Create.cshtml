@@ -1,0 +1,66 @@
+﻿@model ReservaSalas.Models.Reserva
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="d-flex flex-column justify-content-center align-items-center min-vh-100 ">
+
+
+    <div class="col-md-4 mx-auto p-4 border shadow bg-white opacity-75 rounded-1">
+    <p>
+
+    <h1 class="col-md-4 mx-auto mt-4 text-center fw-bold border-primary"> Reservar</h1>
+    </p>
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="form-group mt-3 ">
+                <label asp-for="SalaId" class="control-label fs-5 fw-bold">Sala</label>
+                        <select asp-for="SalaId" class="form-control" asp-items="ViewBag.SalaId">
+                            <option value="">Selecione a Sala</option>
+                        </select>
+                        <span asp-validation-for="SalaId" class="text-danger"></span>
+                    </div>
+
+            <div class="form-group">
+                <label asp-for="DataReserva" class="control-label fs-5 fw-bold">Data Da Reserva</label>
+                        <input asp-for="DataReserva" class="form-control" />
+                        <span asp-validation-for="DataReserva" class="text-danger"></span>
+                    </div>
+
+            <div class="form-group ">
+                <label asp-for="HoraInicio" class="control-label fs-5 fw-bold">Hora Inicio</label>
+                        <input asp-for="HoraInicio" class="form-control" />
+                        <span asp-validation-for="HoraInicio" class="text-danger"></span>
+                    </div>
+
+            <div class="form-group ">
+                <label asp-for="HoraFim" class="control-label fs-5 fw-bold">Hora Fim </label>
+                        <input asp-for="HoraFim" class="form-control" />
+                        <span asp-validation-for="HoraFim" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mt-3">
+                
+                        <input type="submit" value="Criar" class="btn btn-success w-100" />
+                    
+                  
+               
+                    </div>
+                    <div class="form-goup mt-2" >
+                <a class="btn btn-warning w-100" asp-action="Index">voltar</a>
+
+                    </div>
+                </form>
+            </div>
+ </div>
+
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

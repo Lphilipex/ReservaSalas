@@ -1,0 +1,46 @@
+﻿@model ReservaSalas.Models.Sala
+
+@{
+    ViewData["Title"] = "Excluir Sala";
+}
+
+<h1>Excluir</h1>
+
+@* =============================================== *@
+@* NOVO: Exibe a mensagem de erro se houver reservas *@
+@* =============================================== *@
+
+@if (ViewData["DeleteError"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <strong>Erro de Exclusão:</strong> @ViewData["DeleteError"]
+    </div>
+
+    @* Se houver erro, a exclusão é impedida. Adicione um link para voltar: *@
+    <div>
+        <a asp-action="Index">Voltar para a Lista</a>
+    </div>
+}
+else
+{
+    @* O restante da sua View (título, detalhes da sala e formulário de POST) deve ficar aqui dentro *@
+
+    <h3>Tem certeza de que deseja excluir esta Sala?</h3>
+
+    <div>
+        <h4>Sala</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Nome)
+            </dt>
+            @* ... (outras dt/dd para os detalhes da sala) ... *@
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Excluir" class="btn btn-danger" /> |
+            <a asp-action="Index">Voltar para a Lista</a>
+        </form>
+    </div>
+}

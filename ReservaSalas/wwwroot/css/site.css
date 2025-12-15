@@ -1,0 +1,60 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    background-image: url(/Imagens/Cajuhub.webp);
+    background-size: cover;
+    margin-bottom: 60px;
+    
+}
+
+
+
+input{
+    border-radius: 15px;
+    border: 5px;
+}
+
+.form-control
+{
+    border-radius: 10px;
+}
+
+.row
+{
+    position:relative;
+}
+
+login-submit{
+    border-radius: 10px;
+    color: #00ff90;
+
+}
+
+
+.carousel-inner-fixed .carousel-item img {
+    height: 800px; 
+    width: 100%;
+    object-fit: cover;
+}
+
+.carousel-inner-fixed {
+    max-height: 800px; 
+    overflow: hidden;
+}
